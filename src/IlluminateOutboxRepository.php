@@ -34,7 +34,7 @@ final class IlluminateOutboxRepository implements OutboxRepositoryInterface
     public function delete(OutboxMessage ...$messages): void
     {
         DB::transaction(fn () => DB::table('outbox')
-            ->whereIn('event_id', array_map(fn (OutboxMessage $message) => $message->eventId,$messages))
+            ->whereIn('event_id', array_map(fn (OutboxMessage $message) => $message->eventId, $messages))
             ->delete());
     }
 }

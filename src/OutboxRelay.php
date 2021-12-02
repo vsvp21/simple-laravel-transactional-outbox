@@ -13,8 +13,8 @@ final class OutboxRelay
     public function __construct(
         private OutboxRepositoryInterface $outboxRepository,
         private EventDispatcherInterface $eventDispatcher
-    )
-    {}
+    ) {
+    }
 
     public function handle(): int
     {

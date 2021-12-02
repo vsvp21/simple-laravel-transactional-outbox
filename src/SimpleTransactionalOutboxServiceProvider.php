@@ -18,7 +18,7 @@ final class SimpleTransactionalOutboxServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->publishes([
-            __DIR__ . '/../config/outbox.php' => config_path('outbox.php')
+            __DIR__.'/../config/outbox.php' => config_path('outbox.php')
         ]);
     }
 }
