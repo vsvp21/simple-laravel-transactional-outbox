@@ -11,7 +11,7 @@ final class FakeDispatcher implements EventDispatcherInterface
     /**
      * @inheritDoc
      */
-    public function dispatch(object $event)
+    public function dispatch(object $event): void
     {
         echo "Dispatched {$event->payload['eventId']}\n";
     }

@@ -7,10 +7,21 @@ namespace Yuriykim\SimpleTransactionalOutbox\ValueObject;
 use Illuminate\Support\Str;
 use UnexpectedValueException;
 
+/**
+ * @psalm-immutable
+ */
 final class OutboxMessage
 {
     public string $eventId;
 
+    /**
+     * @param string $eventType
+     * @psalm-param class-string $eventType
+     * @param array $payload
+     * @param string|null $eventId
+     *
+     * @throws UnexpectedValueException
+     */
     public function __construct(public string $eventType, public array $payload, ?string $eventId = null)
     {
         if (! $eventId) {
